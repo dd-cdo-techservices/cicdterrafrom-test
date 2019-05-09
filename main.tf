@@ -205,7 +205,6 @@ resource "aws_instance" "wordpress_instance" {
 resource "aws_instance" "mysql_instance" {
 	ami	= "${data.aws_ami.mysqlami.id}"
 	instance_type	= "t2.micro"
-	associate_public_ip_address = "true"
 	subnet_id = "${aws_subnet.cicdnetworkprivatesubnet.id}"
 	vpc_security_group_ids = ["${aws_security_group.cicd_sg_1.id}"]
 
